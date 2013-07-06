@@ -46,7 +46,7 @@ class EasyButton < UIButton
     elsif value = UIColor.clearColor
       super
     else
-      @backgroundColorStart = value
+      @backgroundColorTop = value
       @backgroundColorBottom = value
     end
     self.setNeedsDisplay
