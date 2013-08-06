@@ -217,4 +217,12 @@ class EasyButton < UIButton
     self.setNeedsDisplay
     self.performSelector(:hesitateUpdate, withObject:nil, afterDelay:0.1)
   end
+
+  # fix possible race condition for the highlighted state when
+  # placing buttons inside UITableView, by forcing setHighlighted
+  # property with current value on super and redrawing the button.  
+  def setHighlighted(highlighted)
+    super
+    self.setNeedsDisplay
+  end
 end
